@@ -30,16 +30,30 @@ If you want to translate the actual data (like product descriptions, comments, e
 
      Option2.(MyMemory: API)
      
-            Usage:  MyMemory tracks it usage in words. This means that it doesn't matter how many requests you submit to consult the archive, but the weight of each request.
-            Free, anonymous usage is limited to 5000 chars/day.
-            After providing the email address we can use 50,000 char/day limit.
+            Usage:   ➡️MyMemory tracks it usage in words. This means that it doesn't matter how many requests you submit to consult the archive, but the weight of each request.
+                     ➡️Free, anonymous usage is limited to 5000 chars/day.
+                     ➡️After providing the email address we can use 50,000 char/day limit.
 
-            Limitation:  Does not support "Marathi" Language.
-
+            Limitation:     ❌ Does not support "Marathi" Language.
             
-    
-we can use i18next for UI texts like "Product Name", "Description", "Add to Cart" (labels).
-Use Translation API (MyMemory,LibreTranslate/Google Translate) only for dynamic data like product titles, descriptions, user comments,user names, etc.
+     Option3.(LibreTranslate (Free Self-Hosted Option))
+            Usage: ➡️ You can self-host LibreTranslate and call it directly.
+                   ➡️ Free if self-hosted.
+                   ➡️ Works with React Native (regular fetch request).
+                   
+            Limitation:    ❌ Does not support to "Marathi" language but their is option for trained a "lang model"
+
+     Option4.(Hybrid Approch)
+     
+     we can use i18next for UI texts like "Product Name", "Description", "Add to Cart" (labels).
+     Use Translation API (MyMemory,LibreTranslate/Google Translate) only for dynamic data like product titles, descriptions, user comments,user names, etc.
+
+      limitation:
+      ➡️ Works for dynamic content from API.
+      ➡️ Supports full multi-language content.
+      ❌ Slower because each item is translated via network request.
+      ❌ Needs rate-limiting handling if your data list is large.
+      ❌ If translation API fails, fallback to English.
 
      
 
