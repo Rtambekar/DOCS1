@@ -39,7 +39,7 @@ If you want to translate the actual data (like product descriptions, comments, e
             
     
 we can use i18next for UI texts like "Product Name", "Description", "Add to Cart" (labels).
-Use Translation API (LibreTranslate/Google Translate) only for dynamic data like product titles, descriptions, user comments,user names, etc.
+Use Translation API (MyMemory,LibreTranslate/Google Translate) only for dynamic data like product titles, descriptions, user comments,user names, etc.
 
      
 
