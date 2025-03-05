@@ -1,0 +1,59 @@
+Objective: TO find solution for multilangual support for the application like (English,Hindi,Marathi)
+(Dynamic Translation for Content)
+If you want to translate the actual data (like product descriptions, comments, etc.) into Marathi or Hindi, you have to pass each item to a translation service 
+(like LibreTranslate, Google Translate, etc.) before rendering it in FlatList.
+
+
+Definitions:
+  The words “internationalization” and “localization” often cause confusion; here’s a simplified definition:
+
+  internationalization
+  Preparing the software for localization. Usually done by developers.
+  localization
+  Writing the translations and local formats. Usually done by translators.
+
+
+
+Lets understand Static and Dynamic data in our  application.
+
+  Static Data :  The string which are static means sattled in UI for every time and each render as a similar.like(labels of name,forms details ,button text , tabs name etc.)
+Dynamic Data:  The data comminf from user side basically like (input coming from user side like Name:{"Value"} ,description:{value} and Product name, details almost 90% data will be in
+                dyanamic form.
+
+
+for that we can achive a Hybrid method atleast for static daa we can use django localization and internationalization here with package of i18n.
+
+     Preparing your project for Internationalization and Localization
+     The first and foremost thing to enable translation is to tell Django what is the list of languages it should support,
+     where does it find the translation for static data and what is the default language it should fall back on (in case there is no translation available for the requested language).
+     we can modify setting.py 
+     
+
+# settings.py
+from django.utils.translation import ugettext_lazy as _
+# Setup LocaleMiddleware to enable translations using ugettext_lazy and ugettext
+# Make sure that LocaleMiddleware comes after SessionMiddleware and before CommonMiddleware
+MIDDLEWARE_CLASSES = (
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.locale.LocaleMiddleware',
+   'django.middleware.common.CommonMiddleware',
+)
+# Provide a lists of languages which your site supports.
+LANGUAGES = (
+    ('en', _('English')),
+    ('hi', _('Hindi')),
+    ('mr', _('Marathi')),
+)
+# If you set this to False, Django will make some optimizations so as not
+# to load the internationalization machinery. Make sure it is set to
+# True if you want to support localization
+USE_I18N = True
+# If you set this to False, Django will not format dates, numbers and
+# calendars according to the current locale.
+USE_L10N = True
+# Set the default language for your site.
+LANGUAGE_CODE = 'en'
+# Contains the path list where Django should look into for django.po files for all supported languages
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
