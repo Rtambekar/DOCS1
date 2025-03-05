@@ -3,6 +3,15 @@ Objective: TO find solution for multilangual support for the application like (E
 (Dynamic Translation for Content)
 If you want to translate the actual data (like product descriptions, comments, etc.) into Marathi or Hindi, you have to pass each item to a translation service (like LibreTranslate, Google Translate, etc.) before rendering it in FlatList.
 
+
+Definitions:
+  The words “internationalization” and “localization” often cause confusion; here’s a simplified definition:
+
+  internationalization
+  Preparing the software for localization. Usually done by developers.
+  localization
+  Writing the translations and local formats. Usually done by translators.
+
     Option1. Localization (Use i18/next package for applying language for from backend where files for English(en), Hindi(hn),Marathi(mr) are storing the objects of each table listed in database.
              like below: 
                         common.json=(store the common button used in aplication).
