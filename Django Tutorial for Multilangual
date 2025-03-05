@@ -184,3 +184,7 @@ Restart server after translation changes
 
 Conclusion
 Django provides powerful translation support, but requires careful setup and attention to detail.
+
+
+Reference:https://medium.com/fueled-engineering/becoming-a-multilingual-super-hero-in-django-part-1-a000101514dd
+          https://medium.com/fueled-engineering/becoming-a-multilingual-super-hero-in-django-part-2-b509a3f2f4a0
